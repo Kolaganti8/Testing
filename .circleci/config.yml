@@ -27,7 +27,7 @@ workflows:
             - hold-apply
       - hold-destory:
           type: approval
-            - terraform/destroy:
+      - terraform/destroy:
           attach-workspace: true
           context: terraform
           filters:
