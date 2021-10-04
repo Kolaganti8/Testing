@@ -25,15 +25,6 @@ workflows:
               only: main
           requires:
             - hold-apply
-plan-destroy:
-  docker:
-    - image: docker.mirror.hashicorp.services/hashicorp/terraform:light
-    - image: circleci/python:3.6.1
-  steps:
-    - attach-workspace: true
-    - run:
-        name: terarform create destroy plan
-        command: terraform plan -destroy
       - hold-destory:
           type: approval
           requires:
