@@ -31,7 +31,6 @@ plan-destroy:
     - image: circleci/python:3.6.1
   steps:
     - attach-workspace: true
-        at: .
     - run:
         name: terarform create destroy plan
         command: terraform plan -destroy
