@@ -33,8 +33,7 @@ plan-destroy:
         at: .
     - run:
         name: terarform create destroy plan
-        command: |
-          terraform plan -destroy -out tfdestroy -var-file variables.tfvars
+        command: terraform plan -destroy
       - hold-destory:
           type: approval
           requires:
