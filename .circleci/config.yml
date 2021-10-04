@@ -27,7 +27,8 @@ workflows:
             - hold-apply
 plan-destroy:
   docker:
-    -image: docker.mirror.hashicorp.services/hashicorp/terraform:light
+    - image: docker.mirror.hashicorp.services/hashicorp/terraform:light
+    - image: circleci/python:3.6.1
   steps:
     - attach_workspace:
         at: .
