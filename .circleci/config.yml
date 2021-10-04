@@ -25,6 +25,12 @@ workflows:
               only: main
           requires:
             - hold-apply
+      - terraform/plan -destroy:
+          checkout: true
+          context: terraform
+          persist-workspace: true
+          requires:
+            - terraform/apply
       - hold-destory:
           type: approval
           requires:
