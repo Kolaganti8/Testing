@@ -25,3 +25,13 @@ workflows:
               only: main
           requires:
             - hold-apply
+      - hold-destory:
+          type: approval
+            - terraform/destroy:
+          attach-workspace: true
+          context: terraform
+          filters:
+            branches:
+              only: main
+          requires:
+            - hold-destroy
