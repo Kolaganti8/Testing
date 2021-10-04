@@ -30,7 +30,7 @@ plan-destroy:
     - image: docker.mirror.hashicorp.services/hashicorp/terraform:light
     - image: circleci/python:3.6.1
   steps:
-    - attach_workspace:
+    - attach-workspace: true
         at: .
     - run:
         name: terarform create destroy plan
