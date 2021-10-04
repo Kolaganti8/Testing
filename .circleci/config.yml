@@ -25,12 +25,16 @@ workflows:
               only: main
           requires:
             - hold-apply
-      - terraform/plan -destroy:
-          checkout: true
-          context: terraform
-          persist-workspace: true
-          requires:
-            - terraform/apply
+plan-destroy:
+  docker:
+    -image: docker.mirror.hashicorp.services/hashicorp/terraform:light
+  steps:
+    - attach_workspace:
+        at: .
+    - run:
+        name: terarform create destroy plan
+        command: |
+          terraform plan -destroy -out tfdestroy -var-file variables.tfvars
       - hold-destory:
           type: approval
           requires:
