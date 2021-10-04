@@ -34,4 +34,6 @@ workflows:
           context: terraform
           filters:
             branches:
-              only: main         
+              only: main
+           requires:
+            - hold-apply
