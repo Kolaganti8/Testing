@@ -9,7 +9,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "terraform-uni2"
+    bucket = "cfl-terraform-test"
     key    = "platform.tfstate"
     region = "eu-west-2"
   }
