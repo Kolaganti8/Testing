@@ -16,6 +16,10 @@ terraform {
 }
 resource "random_uuid" "randomid" {}
 
-resource "aws_iam_access_key" "circleci" {
-  user = aws_iam_user.circleci.name
-}
+resource "aws_instance" "Dev" {
+    ami = "ami-0dbec48abfe298cab"
+    instance_type = "t2.micro"
+    tags = {
+      name = "Dev3"
+    }
+    }
